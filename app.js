@@ -10,7 +10,7 @@ async function loadUsers() {
     const allUsers = await response.json();
     const activeUsers = allUsers.party.filter(item => item.eatsPizza);
     renderElementCircle(activeUsers);
-    AmountUsers(allUsers.party.length, activeUsers.length);
+    amountUsers(allUsers.party.length, activeUsers.length);
 
     btnLoad.disabled = false;
     textLoad.classList.remove("active");
@@ -40,7 +40,7 @@ function calcPartOfCircle(activeUsers) {
     return strBackground;
 }
 
-function AmountUsers(amount, amountActive) {
+function amountUsers(amount, amountActive) {
     const info = document.getElementById('info');
     info.innerHTML = `participants: ${amount} pizza eaters: ${amountActive}`;
 }
